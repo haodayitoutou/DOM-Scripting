@@ -3,11 +3,12 @@ function showPic(whichpic)
 {
 	if (!document.getElementById("placeholder")) return true;
 	var source = whichpic.getAttribute("href");
-	var place = document.getElementById("placeholder");	
+	var place = document.getElementById("placeholder");
 	place.setAttribute( "src", source);
 
 	if (!document.getElementById("description")) return false;
-	var text = whichpic.getAttribute("title");
+	//var text = whichpic.getAttribute("title");
+	var text = whichpic.getAttribute("title") ? whichpic.getAttribute("title") : "No Title";
 	var description = document.getElementById("description");
 	description.firstChild.nodeValue = text;
 
@@ -20,25 +21,27 @@ function prepareGallery() {
 	if (!document.getElementById("imagegallery")) return false;
 
 	var gallery = document.getElementById("imagegallery");
-	var links = gallery.getElementByTagName("a");
+	var links = gallery.getElementsByTagName("a");
 
 	for (var i = 0; i < links.length; i++) {
 		links[i].onclick = function(){
-			showPic(this);
+			return showPic(this);
 		}
 	}
 }
 
+
 function addLoadEvent(func) {
 	var oldonload = window.onload;
-
-	if (typeof window.onload != 'function') {
+	if (typeof window.onload != 'function'){
 		window.onload = func;
-	}
-	else {
+	} else {
 		window.onload = function() {
 			oldonload();
 			func();
 		}
 	}
 }
+
+
+addLoadEvent(prepareGallery);

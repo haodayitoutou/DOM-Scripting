@@ -26,3 +26,7 @@ li {
     padding: 10px;
     list-style: none;
 }
+
+#imagegallery li {
+  display: inline;
+}
