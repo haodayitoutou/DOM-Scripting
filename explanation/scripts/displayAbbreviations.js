@@ -33,6 +33,7 @@ function displayAbbreviations () {
     dlist.appendChild(ddesc);
   }
 
+
   //create a headline
   var header = document.createElement("h2");
   var header_text = document.createTextNode("Abbreviations");
@@ -41,6 +42,5 @@ function displayAbbreviations () {
   document.body.appendChild(header);
   document.body.appendChild(dlist);
 }
-
 
 addLoadEvent(displayAbbreviations);
