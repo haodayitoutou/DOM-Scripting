@@ -9,7 +9,7 @@ function stripeTables() {
 		var rows = tables[i].getElementsByTagName("tr");
 		for (var j=0; j<rows.length; j++) {
 			if (odd) {
-				rows[j].style.backgroundColor = "#ffc";
+				rows[j].className = "odd";
 				odd = false;
 			} else {
 				odd = true;

@@ -29,3 +29,7 @@ th, td {
   width: 10em;
   padding: .5em;
 }
+
+.odd {
+  background-color: #ffc;
+}
