@@ -46,8 +46,51 @@ function prepareForms() {
 	for (var i=0; i<document.forms.length; i++) {
 		var thisform = document.forms[i];
 		resetFields(thisform);
+		thisform.onsubmit = function() {
+			return validateForm(this);
+		}
 	}
 }
+
+
+function isFilled(field) {
+	if (field.value.length < 1 || field.value == field.defaultValue) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function isEmail(field) {
+	if (field.value.indexOf("@") == -1 || field.value.indexOf(".") == -1) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
+function validateForm(whichform) {
+	for (var i=0; i < whichform.elements.length; i++) {
+		var element = whichform.elements[i];
+
+		if (element.className.indexOf("required") != -1) {
+			if (!isFilled(element)) {
+				alert("Please fill in the "+element.name+" field.");
+				return false;
+			}
+		}
+
+		if (element.className.indexOf("email") != -1) {
+			if (!isEmail(element)) {
+				alert("The "+element.name+" field must be a valid email address.");
+				return false;
+			}
+		}
+	}
+	return true;
+}
+
+
 
 addLoadEvent(focusLabels);
 addLoadEvent(prepareForms);
