@@ -1,5 +1,5 @@
 
-function moveElement(elementID, finalX, finaY, interval) {
+function moveElement(elementID, finalX, finalY, interval) {
 	if (!document.getElementById) return false;
 	if (!document.getElementById(elementID)) return false;
 
@@ -18,7 +18,7 @@ function moveElement(elementID, finalX, finaY, interval) {
 	var xpos = parseInt(elem.style.left);
 	var ypos = parseInt(elem.style.top);
 
-	if (xpos == finalX && ypos == finaY) {
+	if (xpos == finalX && ypos == finalY) {
 		return true;
 	}
 
@@ -32,20 +32,20 @@ function moveElement(elementID, finalX, finaY, interval) {
 		xpos = xpos - dist;
 	}
 
-	if (ypos < finaY) {
-		var dist = Math.ceil( (finaY - ypos)/10 );
+	if (ypos < finalY) {
+		var dist = Math.ceil( (finalY - ypos)/10 );
 		ypos = ypos + dist;
 	}
 
-	if (ypos > finaY) {
-		var dist = Math.ceil( (ypos - finaY)/10 );
+	if (ypos > finalY) {
+		var dist = Math.ceil( (ypos - finalY)/10 );
 		ypos = ypos - dist;
 	}
 
 	elem.style.left = xpos + "px";
 	elem.style.top = ypos + "px";
 
-	var repeat = "moveElement('"+elementID+"', "+finalX+", "+finaY+", "+interval+")";
+	var repeat = "moveElement('"+elementID+"', "+finalX+", "+finalY+", "+interval+")";
 
 	elem.movement = setTimeout(repeat, interval);
 
@@ -62,7 +62,7 @@ function prepareSlideshow() {
   slideshow.setAttribute("id", "slideshow");
 
 	var frame = document.createElement("img");
-	frame.setAttribute("src", "images/frame.gif")
+	frame.setAttribute("src", "images/frame.gif");
 	frame.setAttribute("alt", "");
 	frame.setAttribute("id", "frame");
 	slideshow.appendChild(frame);
