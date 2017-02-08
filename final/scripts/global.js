@@ -12,7 +12,7 @@ function addLoadEvent(func) {
 }
 
 
-function inserAfter(newElement, targetElement) {
+function insertAfter(newElement, targetElement) {
 	var parent = targetElement.parentNode;
 	if (parent.lastChild == targetElement){
 		parent.appendChild(newElement);
@@ -48,6 +48,9 @@ function hightlightPage() {
 
 		if (currenturl.indexOf(linkurl) != -1) {
 			links[i].className = "here";
+
+			var linktext = links[i].lastChild.nodeValue.toLowerCase();
+			document.body.setAttribute("id", linktext);
 		}
 	}
 }

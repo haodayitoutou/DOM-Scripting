@@ -57,3 +57,62 @@ body {
   padding: 2em 10%;
   line-height: 1.8em;
 }
+
+#about #header {
+  background-image: url(../images/lineup.gif);
+}
+
+#photos #header {
+  background-image: url(../images/basshead.gif);
+}
+
+#live #header {
+  background-image: url(../images/bassist.gif);
+}
+
+#contact #header {
+  background-image: url(../images/drummer.gif);
+}
+
+#slideshow {
+  width: 150px;
+  height: 150px;
+  position: relative;
+  overflow: hidden;
+}
+
+#frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+}
+
+#imagegallery li {
+  display: inline;
+}
+
+td {
+  padding: .5em 3em;
+}
+
+
+dl {
+  overflow: hidden;
+}
+
+dt {
+  float: left;
+}
+
+dd {
+  float: left;
+}
+
+label {
+  display: block;
+}
+
+fieldset {
+  border: 0;
+}

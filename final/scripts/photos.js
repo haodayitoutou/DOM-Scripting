@@ -1,27 +1,4 @@
 
-function addLoadEvent(func) {
-	var oldonload = window.onload;
-	if (typeof window.onload != 'function'){
-		window.onload = func;
-	} else {
-		window.onload = function() {
-			oldonload();
-			func();
-		}
-	}
-}
-
-
-function insertAfter(newElement, targetElement) {
-	var parent = targetElement.parentNode;
-	if (parent.lastChild == targetElement){
-		parent.appendChild(newElement);
-	} else {
-		parent.insertBefore(newElement, targetElement.nextSibling);
-	}
-}
-
-
 function preparePlaceHolder() {
 	if (!document.createElement) return false;
 	if (!document.createTextNode) return false;
@@ -30,7 +7,7 @@ function preparePlaceHolder() {
 
 	var placeholder = document.createElement("img");
 	placeholder.setAttribute("id", "placeholder");
-	placeholder.setAttribute("src", "images/placeholder.png");
+	placeholder.setAttribute("src", "images/placeholder.gif");
 	placeholder.setAttribute("alt", "my image gallery");
 
 	var description = document.createElement("p");
@@ -40,8 +17,8 @@ function preparePlaceHolder() {
 	description.appendChild(desctext);
 
 	var gallery = document.getElementById("imagegallery");
-	insertAfter(placeholder, gallery);
-	insertAfter(description, placeholder);
+	insertAfter(description, gallery);
+	insertAfter(placeholder, description);
 }
 
 

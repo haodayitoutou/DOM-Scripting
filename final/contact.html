@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Image Gallery</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="scripts/showPic.js"></script>
-    <link rel="stylesheet" type="text/css" href="styles/layout.css" media="screen" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Jay Skript And The Domsters</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/basic.css">
+  <script type="text/javascript" src="scripts/global.js"></script>
+  <script type="text/javascript" src="scripts/contact.js"></script>
 </head>
 <body>
+  <div id="header">
+    <img src="images/logo.gif" alt="Jay Skript and the Domsters" />
+  </div>
 
-	<h1>Snapshots</h1>
-	<ul id="imagegallery">
-		<li><a href="images/Image001.jpg" title="First image">Image001</a></li>
-		<li><a href="images/Image002.jpg" title="Seconde image">Image002</a></li>
-		<li><a href="images/Image003.jpg" title="Third image">Image003</a></li>
-	</ul>
+  <div id="navigation">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="photos.html">Photos</a></li>
+      <li><a href="live.html">Live</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  <div id="content">
+    <h1>Contact the band</h1>
+    <form action="#" method="post">
+      <fieldset>
+        <p>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" value="Your name" class="required" />
+        </p>
+        <p>
+          <label for="email">email:</label>
+          <input type="text" id="email" name="email" value="Your email address" class="email required" />
+        </p>
+        <p>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="7" cols="45" class="required">
+            Write your message here.
+          </textarea>
+        </p>
+        <input type="submit" value="Send">
+      </fieldset>
+    </form>
+
+  </div>
 
 </body>
 </html>
